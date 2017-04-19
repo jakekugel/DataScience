@@ -1,0 +1,2 @@
+you may need to clone the following at this location:
+git clone https://github.com/AllenDowney/ThinkBayes2.git
