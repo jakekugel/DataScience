@@ -15,7 +15,7 @@ for line in f:
         words.Incr(word.strip(), 1)
 #print(words)
 words.Normalize()
-#print(words)
+print(words)
 
 
 print("Finished")

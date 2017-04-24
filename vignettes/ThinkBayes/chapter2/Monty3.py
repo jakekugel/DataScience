@@ -9,9 +9,26 @@ class Monty(Pmf):
         for hypo in hypos:
             self.Set(hypo, 1)
         self.Normalize()
+    def Update(self, data):
+        for hypo in self.Values():
+            like = self.Likelihood(data, hypo)
+            self.Mult(hypo, like)
+        self.Normalize()
+    def Likelihood(self, data, hypo):
+        if hypo == data:
+            return 0;
+        elif hypo == 'A':
+            return 0.5
+        else:
+            return 1
 
 hypos = 'ABC'
 pmf = Monty(hypos)
+print(pmf)
+
+#calling update
+pmf.Update('B')
+print("After Update: ")
 print(pmf)
 
 print("Finished")
