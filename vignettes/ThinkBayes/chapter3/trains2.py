@@ -36,9 +36,9 @@ def main():
     # Create a new Train object with hypotheses 1 (company has one train)
     # through 1000 (company has 1000 trains)
     train_uniform = Train(range(1, 1001))
-    train_uniform.name = "Trains with uniform prior"
+    train_uniform.label = "Trains with uniform prior"
     train_powerlaw = Train(range(1, 1001), alpha=1.0)
-    train_powerlaw.name = "Trains with power-law prior"
+    train_powerlaw.label = "Trains with power-law prior"
 
     # update the probability mass function with new data (train #60)
     train_uniform.Update(60)

@@ -23,12 +23,15 @@ class Euro(Suite):
 
 def main():
     euro = Euro(range(101))
+    euro.label = "Posterior probability of various biases"
 
     for data in range(140):
         euro.Update('H')
 
     for data in range(110):
         euro.Update('T')
+
+    euro.Print()
 
     print("Mean hypothesis = {}".format(euro.Mean()))
     print("Median hypothesis = {}".format(euro.Median()))
@@ -38,7 +41,7 @@ def main():
 
     # Use Allen Downey's thinkplot module to create a graph
     thinkplot.PrePlot(1)
-    thinkplot.Pmf(euro)
+    thinkplot.Plot(euro, style='')
     thinkplot.Save(root='euro1',
                    xlabel='Bias of heads vs. tails',
                    ylabel='Probability',

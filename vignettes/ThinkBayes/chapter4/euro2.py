@@ -37,7 +37,9 @@ def summarize_posterior(suite):
 
 def main():
     euro = Euro(range(101))
+    euro.label = "Uniform prior"
     euro_triangleprior = Euro(range(101), triangle_prior=True)
+    euro_triangleprior.label = "Triangle prior"
 
     for data in range(140):
         euro.Update('H')
@@ -55,8 +57,8 @@ def main():
 
     # Use Allen Downey's thinkplot module to create a graph
     thinkplot.PrePlot(1)
-    thinkplot.Pmf(euro)
-    thinkplot.Pmf(euro_triangleprior)
+    thinkplot.Plot(euro)
+    thinkplot.Plot(euro_triangleprior)
     thinkplot.Save(root='euro2',
                    xlabel='Bias of heads vs. tails',
                    ylabel='Probability',

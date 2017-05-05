@@ -26,8 +26,8 @@ def main():
 
     # Create a new Train object with hypotheses 1 (company has one train)
     # through 1000 (company has 1000 trains)
-    # train = Train(range(1, 1001))
-    train = Train("asdasd")
+    train = Train(range(1, 1001))
+    train.label = "Posterior Probability"
 
     # update the probability mass function with new data (train #60)
     train.Update(60)
