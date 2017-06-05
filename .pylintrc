@@ -1,0 +1,6 @@
+[MASTER]
+
+# This setting adds the ThinkBayes2 library to the python path for pylint.
+# Since vscode uses the DataScience top directory as current directory, this file is
+# placed in the top directory.
+init-hook = 'import sys; sys.path.append("vignettes/ThinkBayes/lib/ThinkBayes2/code")'
